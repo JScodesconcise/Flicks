@@ -1,0 +1,27 @@
+.movie-details {
+  color: white;
+  background-color: black;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.movie-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.movie-header h1 {
+  font-size: 24px;
+}
+
+.movie-header h2 {
+  font-size: 20px;
+  color: gray;
+}
+
+.movie-poster-large {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+}
