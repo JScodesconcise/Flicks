@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* layout */
+.preference-modal{
+    max-width: 1080px;
+    border-radius: 50px;
+}
+
+.preference-modal-inside > h1{
+    text-align: center;
+}
+
+/* styling/typography */
+
+.preference-modal{
+    background-color: #0A1A2F;
+}
+
+.preference-modal-inside > h1, h2{
+    color: #F5F5F5;
+}
+
+.preference-modal-inside > h2{
+    font-size: 1.5rem;
+    font-family: "Roboto", 'Times New Roman';
+    font-weight: 400;
+}
+.preference-modal-inside > h1{
+    font-size: 4rem;
+    font-family: "Bebas Neue", serif;
+    text-align: center;
+}
