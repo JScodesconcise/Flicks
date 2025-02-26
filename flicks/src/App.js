@@ -1,8 +1,13 @@
 import logo from "./logo.svg";
 import "./App.css";
+import MoviePage from "./components/MoviePage";
 
 function App() {
-	return <></>;
+	return (
+		<div>
+		  <MoviePage />
+		</div>
+	  );
 }
 
 export default App;
