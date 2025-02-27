@@ -1,9 +1,18 @@
-import logo from "./logo.svg";
-import "./App.css";
-import MoviePreferencesModal from "./components/MoviePreferencesModal.jsx"
+import LoginForm from './components/LoginForm/LoginForm.js';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import SignupForm from './components/SignupForm/SignupForm.js';
+import ForgotPasswordForm from './components/ForgotPasswordForm/ForgotPasswordForm.js';
 
 function App() {
-	return <MoviePreferencesModal/>;
+  return (
+      <Router>  {/* Wrap everything inside Router */}
+          <Routes>
+              <Route path="/login" element={<LoginForm />} /> 
+              <Route path="/signup" element={<SignupForm />} /> 
+              <Route path="/forgotpassword" element={<ForgotPasswordForm />} /> 
+          </Routes>
+      </Router>
+  );
 }
 
 export default App;
