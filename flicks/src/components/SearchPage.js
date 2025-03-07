@@ -7,7 +7,7 @@ function SearchPage() {
 
   useEffect(() => {
     // Simulate fetching from a database
-    fetch("/data/movies.json")
+    fetch("/movies.json")
       .then((res) => res.json())
       .then((data) => setMovies(data))
       .catch((err) => console.error("Error loading movies:", err));
