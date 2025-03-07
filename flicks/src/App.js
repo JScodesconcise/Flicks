@@ -1,8 +1,8 @@
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
+import SearchPage from "./components/SearchPage"; // Import the Search Page
 
 function App() {
-	return <></>;
+  return <SearchPage />;
 }
 
 export default App;
