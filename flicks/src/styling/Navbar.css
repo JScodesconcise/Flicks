@@ -3,25 +3,36 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: yellow;
+  background-color: #FFD700; /* Gold */
   padding: 15px 30px;
 }
 
+/* Logo Text */
 .logo {
   font-size: 24px;
   font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  color: #FFFFFF; /* White */
 }
 
+/* Navbar Buttons */
 .nav-links button {
-  background-color: navy;
-  color: white;
+  background-color: #0A1A2F; /* Dark Navy */
+  color: #FFFFFF; /* White */
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
   border: none;
-  padding: 10px 15px;
-  margin: 5px;
-  border-radius: 5px;
+  padding: 12px 12px; /* Based on your Figma */
+  margin: 8px; /* Spacing between buttons */
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  /* Drop Shadow */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
+/* Hover Effect */
 .nav-links button:hover {
-  background-color: darkblue;
+  background-color: #14253E; /* Slightly lighter navy */
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); /* Stronger shadow */
 }
