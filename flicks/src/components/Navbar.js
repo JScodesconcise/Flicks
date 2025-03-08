@@ -1,10 +1,15 @@
 import React from "react";
-import "../styling/Navbar.css"; // Import CSS
+import "../styling/Navbar.css";
 
 function Navbar() {
   return (
     <nav className="navbar">
-      <div className="logo">🎬 Flicks</div>
+      {/* Movie Logo (Top Left) */}
+      <div className="logo">
+        <img src="/assets/movie-logo.svg" alt="Movie Logo" className="movie-logo" />
+      </div>
+
+      {/* Navigation Buttons */}
       <div className="nav-links">
         <button>Profile</button>
         <button>Sign In</button>
