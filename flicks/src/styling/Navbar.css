@@ -30,6 +30,15 @@
   height: auto;
 }
 
+/* Navbar Buttons Container */
+.nav-links {
+  display: flex;
+  gap: 15px; /* Adjust spacing */
+  position: absolute;
+  top: 19px; /* Align per Figma */
+  right: 60px; /* Moved left (was 30px) */
+}
+
 /* Navbar Buttons */
 .nav-links button {
   background-color: #0A1A2F; /* Dark Navy */
@@ -39,20 +48,17 @@
   border: none;
   width: 91px; /* Match Figma */
   height: 41px; /* Match Figma */
-  padding: 0; /* No extra padding needed */
+  padding: 0;
   margin: 8px; /* Spacing between buttons */
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-
-  /* Rounded Corners */
   border-radius: 30px;
-
-  /* Drop Shadow */
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 /* Hover Effect */
 .nav-links button:hover {
-  background-color: #14253E; /* Slightly lighter navy */
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); /* Stronger shadow */
+  background-color: #14253E;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
 }
+
