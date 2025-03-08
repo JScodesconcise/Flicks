@@ -1,9 +1,9 @@
-import logo from "./logo.svg";
 import "./App.css";
-import MoviePreferencesModal from "./components/MoviePreferencesModal.jsx"
+import FlicksLandingPage from "./components/MainPage.js"
 
 function App() {
-	return <MoviePreferencesModal/>;
+	return (<FlicksLandingPage/>
+	);
 }
 
 export default App;
