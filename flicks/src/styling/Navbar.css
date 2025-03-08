@@ -4,13 +4,13 @@
   justify-content: space-between;
   align-items: center;
   background-color: #FFD700; /* Gold */
-  height: 79px; /* Exact Figma height */
-  width: 100%;
-  position: fixed; /* Fix to the top */
+  padding: 0 30px; /* Left & Right Padding */
+  height: 79px; /* Match Figma */
+  width: 100%; /* Full width */
+  position: fixed; /* Fix to top */
   top: 0;
   left: 0;
-  z-index: 1000; /* Ensure it's always on top */
-  padding: 0 30px; /* Adjusted padding */
+  z-index: 1000; /* Ensure it stays on top */
 }
 
 /* Adjust Page Content to Avoid Overlapping */
@@ -26,15 +26,6 @@
   color: #FFFFFF; /* White */
 }
 
-/* Button Wrapper */
-.nav-links {
-  display: flex;
-  gap: 24px; /* Adjust spacing between buttons */
-  position: absolute;
-  right: 30px; /* Align to the right */
-  top: 19px; /* Match Figma */
-}
-
 /* Navbar Buttons */
 .nav-links button {
   background-color: #0A1A2F; /* Dark Navy */
@@ -44,10 +35,16 @@
   border: none;
   width: 91px; /* Match Figma */
   height: 41px; /* Match Figma */
-  border-radius: 30px; /* Rounded corners */
+  padding: 0; /* No extra padding needed */
+  margin: 8px; /* Spacing between buttons */
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Drop shadow */
+
+  /* Rounded Corners */
+  border-radius: 30px;
+
+  /* Drop Shadow */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 /* Hover Effect */
