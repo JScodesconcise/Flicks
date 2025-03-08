@@ -1,11 +1,11 @@
 import React from "react";
 import "../styling/SearchPage.css";
-import Navbar from "./Navbar"; // Navbar is already added
+import Navbar from "./Navbar";
 
 function SearchPage() {
   return (
     <div className="search-page">
-      <Navbar /> {/* Navbar stays at the top */}
+      <Navbar /> {/* Navbar Stays on Top */}
 
       {/* Search Bar */}
       <div className="search-container">
