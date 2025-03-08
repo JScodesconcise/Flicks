@@ -1,41 +1,41 @@
-import "./MoviePage.css"
+import "./MoviePage.css";
 
-const MoviePage = () => {
+const MoviePage = ({ title, year, director, advisory, length, genres, overview, rating, cast, flicksRating }) => {
     return (
         <div className="movie-page">
             <header className="header">
-                <h1 className="title">TITLE</h1>
-                <h2 className="year">YEAR</h2>
+                <h1 className="title">{title}</h1>
+                <h2 className="year">{year}</h2>
             </header>
 
-            <div class="bl-circle"></div>
-            <div class="tl-small-circle"></div>
-            <div class="tl-circle"></div>
+            <div className="bl-circle"></div>
+            <div className="tl-small-circle"></div>
+            <div className="tl-circle"></div>
         
             <div className="content-wrapper">
                 <section className="main-content" id="sub">
                     <section className="info">
-                        <p><strong>Directed by:</strong> [Director Name]</p>
-                        <p><strong>Advisory Rating, Length</strong></p>
+                        <p><strong>Directed by:</strong> {director}</p>
+                        <p><strong>{advisory}, {length}</strong></p>
                     </section>
 
                     <section className="genres">
-                        <p><em>[Genre List]</em></p>
+                        <p><em>{genres.join(", ")}</em></p>
                     </section>
 
                     <section className="overview">
                         <h3>Overview</h3>
-                        <p>...</p>
+                        <p>{overview}</p>
                     </section>
 
                     <section className="rating">
                         <h3>Rate</h3>
-                        <p className="stars">⭐ ⭐ ⭐ ⭐ ⭐</p>
+                        <p className="stars">{"⭐".repeat(rating)}</p>
                     </section>
 
                     <section className="cast">
                         <h3>Cast</h3>
-                        <p><em>Name, Name, Name, Name</em></p>
+                        <p><em>{cast.join(", ")}</em></p>
                     </section>
 
                     <section className="trailer">
@@ -45,13 +45,13 @@ const MoviePage = () => {
                 </section>
 
                 <aside className="sidebar">
-                    <div className="poster-placeholder"></div>
-                    <p><strong>Flicks Rating:</strong> n.n</p>
+                    <img className="poster" src="https://i.ebayimg.com/00/s/MTYwMFgxMDk3/z/LlUAAOSwm8VUwoRL/$_57.JPG?set_id=880000500F" alt="Poster"></img>
+                    <p><strong>Flicks Rating:</strong> {flicksRating}</p>
                     <button className="watchlist-button">Add to watchlist</button>
                 </aside>
             </div>
         </div>      
     );
-  };
-  
-  export default MoviePage;
+};
+
+export default MoviePage;
