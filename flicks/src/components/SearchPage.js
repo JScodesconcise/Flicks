@@ -1,11 +1,16 @@
 import React from "react";
 import "../styling/SearchPage.css";
-import Navbar from "./Navbar";
+import Navbar from "./Navbar"; // Keep Navbar
 
 function SearchPage() {
   return (
     <div className="search-page">
       <Navbar /> {/* Navbar Stays on Top */}
+
+      {/* Decorative Background Circles */}
+      <div className="bl-circle"></div>
+      <div className="tl-small-circle"></div>
+      <div className="tl-circle"></div>
 
       {/* Search Bar */}
       <div className="search-container">
