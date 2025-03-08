@@ -2,15 +2,15 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; /* Ensures vertical centering */
   background-color: #FFD700; /* Gold */
-  padding: 0 30px; /* Left & Right Padding */
-  height: 79px; /* Match Figma */
-  width: 100%; /* Full width */
-  position: fixed; /* Fix to top */
+  padding: 0 30px;
+  height: 79px;
+  width: 100%;
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000; /* Ensure it stays on top */
+  z-index: 1000;
 }
 
 /* Adjust Page Content to Avoid Overlapping */
@@ -34,9 +34,8 @@
 .nav-links {
   display: flex;
   gap: 15px; /* Adjust spacing */
-  position: absolute;
-  top: 19px; /* Align per Figma */
   right: 60px; /* Moved left (was 30px) */
+  align-items: center; /* Ensures buttons align in the center */
 }
 
 /* Navbar Buttons */
@@ -49,11 +48,14 @@
   width: 91px; /* Match Figma */
   height: 41px; /* Match Figma */
   padding: 0;
-  margin: 8px; /* Spacing between buttons */
+  margin: 0 8px; /* Spacing between buttons */
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   border-radius: 30px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center text inside button */
 }
 
 /* Hover Effect */
