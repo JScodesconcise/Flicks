@@ -1,6 +1,6 @@
 import React from "react";
 import "../styling/SearchPage.css";
-import Navbar from "./Navbar"; // Keep Navbar
+import Navbar from "./Navbar";
 
 function SearchPage() {
   return (
@@ -8,7 +8,7 @@ function SearchPage() {
       <Navbar /> {/* Navbar Stays on Top */}
 
       {/* Decorative Background Circles */}
-      <div className="bl-circle"></div>
+      <div className="bl-circle"></div> {/* Now on the right */}
       <div className="tl-small-circle"></div>
       <div className="tl-circle"></div>
 
@@ -19,6 +19,15 @@ function SearchPage() {
 
       {/* Section Title */}
       <h2 className="section-title">Search for your favorite movies!</h2>
+
+      {/* Movie Grid Placeholder */}
+      <div className="movie-grid">
+        {[...Array(10)].map((_, index) => (
+          <div key={index} className="movie-placeholder">
+            Movie {index + 1}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
