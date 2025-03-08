@@ -14,7 +14,7 @@ function SearchPage() {
 
       {/* Search Bar with Icon */}
       <div className="search-container">
-        <img src="/assets/search-icon.svg" alt="Search Icon" className="search-icon" />
+        <img src="/assets/search.svg" alt="Search Icon" className="search-icon" />
         <input type="text" className="search-box" placeholder="Search" />
       </div>
 
