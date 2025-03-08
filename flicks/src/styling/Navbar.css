@@ -1,14 +1,16 @@
 /* Navbar Styling */
 .navbar {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   background-color: #FFD700; /* Gold */
-  height: 79px; /* Match Figma */
-  width: 100%; /* Full width */
-  position: fixed; /* Fix to top */
+  height: 79px; /* Exact Figma height */
+  width: 100%;
+  position: fixed; /* Fix to the top */
   top: 0;
   left: 0;
-  z-index: 1000; /* Ensure it stays on top */
+  z-index: 1000; /* Ensure it's always on top */
+  padding: 0 30px; /* Adjusted padding */
 }
 
 /* Adjust Page Content to Avoid Overlapping */
@@ -22,18 +24,15 @@
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
   color: #FFFFFF; /* White */
-  position: absolute;
-  left: 30px; /* Adjust logo placement */
-  top: 24px;
 }
 
 /* Button Wrapper */
 .nav-links {
-  position: absolute;
-  top: 19px; /* Align buttons to Figma Y position */
-  right: 30px; /* Align buttons to the right */
   display: flex;
-  gap: 10px; /* Space between buttons */
+  gap: 24px; /* Adjust spacing between buttons */
+  position: absolute;
+  right: 30px; /* Align to the right */
+  top: 19px; /* Match Figma */
 }
 
 /* Navbar Buttons */
@@ -50,12 +49,6 @@
   transition: all 0.3s ease-in-out;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Drop shadow */
 }
-
-/* Individual Button Positions Based on Figma */
-.nav-links button:nth-child(1) { left: 972px; }
-.nav-links button:nth-child(2) { left: 1091px; }
-.nav-links button:nth-child(3) { left: 1210px; }
-.nav-links button:nth-child(4) { left: 1329px; }
 
 /* Hover Effect */
 .nav-links button:hover {
