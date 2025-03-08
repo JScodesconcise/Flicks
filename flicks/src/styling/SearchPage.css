@@ -1,68 +1,60 @@
-/* Overall Page Styling */
+/* Ensure Page Content is Centered */
 .search-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   background-color: black;
   color: white;
-  text-align: center;
-  padding: 20px;
   min-height: 100vh;
+  padding-top: 100px; /* Prevent overlap with navbar */
 }
 
-/* Navbar Styling */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: yellow;
-  padding: 15px 30px;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.nav-links button {
-  background-color: navy;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  margin: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.nav-links button:hover {
-  background-color: darkblue;
-}
-
-/* Search Bar Styling */
-.search-container {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
-}
-
-.search-box {
-  width: 60%;
-  padding: 15px;
-  font-size: 18px;
-  border: none;
-  border-radius: 30px;
-  background-color: white;
-  color: black;
-  text-indent: 15px;
-}
-
+/* Title: "Search for your favorite movies!" */
 .section-title {
-  font-size: 24px;
-  margin-top: 20px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 64px;
+  text-align: center;
+  width: 898px; /* Match Figma */
+  height: 90px; /* Match Figma */
+  position: absolute;
+  top: 263px; /* Position per Figma */
+  left: 269px;
 }
 
-/* Movie Grid Layout */
-.movie-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px;
-  max-width: 900px;
-  margin: 0 auto;
+/* Search Bar Container */
+.search-container {
+  width: 935.45px; /* Match Figma */
+  height: 75px; /* Match Figma */
+  background-color: white;
+  border-radius: 40px; /* Optional: Rounded edges */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute;
+  top: 133px;
+  left: 269px;
+  padding: 0 20px;
+}
+
+/* Search Input Field */
+.search-box {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  width: 491px; /* Match Figma */
+  height: 29px; /* Match Figma */
+  border: none;
+  outline: none;
+  color: black;
+  background: none;
+  position: absolute;
+  top: 158px;
+  left: 341px;
+}
+
+/* Placeholder Text */
+.search-box::placeholder {
+  color: gray;
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
 }
