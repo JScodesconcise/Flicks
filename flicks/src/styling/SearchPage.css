@@ -39,18 +39,26 @@ body {
   justify-content: flex-start;
   padding: 10px 20px;
   margin-bottom: 30px;
+  position: relative;
 }
 
-/* Search Input */
+/* Search Icon Inside Search Bar */
+.search-icon {
+  width: 30px; /* Adjusted based on Figma */
+  height: auto;
+  margin-right: 15px;
+}
+
+/* Adjust Input Box to Avoid Overlapping Icon */
 .search-box {
   font-family: 'Playfair Display', serif;
-  font-size: 28px; /* Reduced from 32px */
+  font-size: 28px;
   width: 100%;
   border: none;
   outline: none;
   color: black;
   background: none;
-  text-indent: 20px;
+  padding-left: 40px; /* Make space for the icon */
 }
 
 /* Placeholder Text */
@@ -83,8 +91,7 @@ body {
   font-size: 18px;
 }
 
-
-
+/* Decorative Circles */
 .bl-circle {
   position: fixed;
   bottom: 0;
