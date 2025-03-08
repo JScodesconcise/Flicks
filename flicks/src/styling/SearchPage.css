@@ -1,60 +1,55 @@
-/* Ensure Page Content is Centered */
+/* Ensure Full-Page Layout */
 .search-page {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   background-color: black;
   color: white;
   min-height: 100vh;
-  padding-top: 100px; /* Prevent overlap with navbar */
+  padding-top: 120px; /* Push content down below navbar */
 }
 
 /* Title: "Search for your favorite movies!" */
 .section-title {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 64px;
+  font-size: 4vw; /* Scale text dynamically */
   text-align: center;
-  width: 898px; /* Match Figma */
-  height: 90px; /* Match Figma */
-  position: absolute;
-  top: 263px; /* Position per Figma */
-  left: 269px;
+  width: 80%; /* Make width flexible */
+  max-width: 900px; /* Match Figma width */
+  margin-top: 20px;
 }
 
 /* Search Bar Container */
 .search-container {
-  width: 935.45px; /* Match Figma */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70vw; /* Scales with screen width */
+  max-width: 935px; /* Match Figma width */
   height: 75px; /* Match Figma */
   background-color: white;
   border-radius: 40px; /* Optional: Rounded edges */
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  position: absolute;
-  top: 133px;
-  left: 269px;
-  padding: 0 20px;
+  margin: 20px auto; /* Center it */
+  padding: 10px 20px;
 }
 
 /* Search Input Field */
 .search-box {
   font-family: 'Playfair Display', serif;
-  font-size: 32px;
-  width: 491px; /* Match Figma */
-  height: 29px; /* Match Figma */
+  font-size: 2vw; /* Scale dynamically */
+  width: 100%;
+  max-width: 500px; /* Limit width */
+  height: 100%;
   border: none;
   outline: none;
   color: black;
   background: none;
-  position: absolute;
-  top: 158px;
-  left: 341px;
 }
 
 /* Placeholder Text */
 .search-box::placeholder {
   color: gray;
   font-family: 'Playfair Display', serif;
-  font-size: 32px;
+  font-size: 2vw;
 }
