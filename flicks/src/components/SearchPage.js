@@ -5,15 +5,16 @@ import Navbar from "./Navbar";
 function SearchPage() {
   return (
     <div className="search-page">
-      <Navbar /> {/* Navbar Stays on Top */}
+      <Navbar /> {/* Navbar stays on top */}
 
       {/* Decorative Background Circles */}
-      <div className="bl-circle"></div> {/* Now on the right */}
+      <div className="bl-circle"></div>
       <div className="tl-small-circle"></div>
       <div className="tl-circle"></div>
 
-      {/* Search Bar */}
+      {/* Search Bar with Icon */}
       <div className="search-container">
+        <img src="/assets/search-icon.svg" alt="Search Icon" className="search-icon" />
         <input type="text" className="search-box" placeholder="Search" />
       </div>
 
