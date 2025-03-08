@@ -22,10 +22,13 @@
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   border: none;
-  padding: 12px 12px; /* Based on your Figma */
+  padding: 12px 12px; /* Based on Figma */
   margin: 8px; /* Spacing between buttons */
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+
+  /* Rounded Corners */
+  border-radius: 30px;
 
   /* Drop Shadow */
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
