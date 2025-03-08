@@ -1,10 +1,8 @@
 /* Navbar Styling */
 .navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   background-color: #FFD700; /* Gold */
-  padding: 0 30px; /* Left & Right Padding */
   height: 79px; /* Match Figma */
   width: 100%; /* Full width */
   position: fixed; /* Fix to top */
@@ -24,6 +22,18 @@
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
   color: #FFFFFF; /* White */
+  position: absolute;
+  left: 30px; /* Adjust logo placement */
+  top: 24px;
+}
+
+/* Button Wrapper */
+.nav-links {
+  position: absolute;
+  top: 19px; /* Align buttons to Figma Y position */
+  right: 30px; /* Align buttons to the right */
+  display: flex;
+  gap: 10px; /* Space between buttons */
 }
 
 /* Navbar Buttons */
@@ -35,17 +45,17 @@
   border: none;
   width: 91px; /* Match Figma */
   height: 41px; /* Match Figma */
-  padding: 0; /* No extra padding needed */
-  margin: 8px; /* Spacing between buttons */
+  border-radius: 30px; /* Rounded corners */
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-
-  /* Rounded Corners */
-  border-radius: 30px;
-
-  /* Drop Shadow */
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Drop shadow */
 }
+
+/* Individual Button Positions Based on Figma */
+.nav-links button:nth-child(1) { left: 972px; }
+.nav-links button:nth-child(2) { left: 1091px; }
+.nav-links button:nth-child(3) { left: 1210px; }
+.nav-links button:nth-child(4) { left: 1329px; }
 
 /* Hover Effect */
 .nav-links button:hover {
