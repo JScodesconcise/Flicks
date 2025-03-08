@@ -1,55 +1,97 @@
-/* Ensure Full-Page Layout */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Page Background */
+body {
+  background-color: #1c1c1c;
+}
+
+/* Search Page Layout */
 .search-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #f5f5f5;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background-color: black;
-  color: white;
-  min-height: 100vh;
-  padding-top: 120px; /* Push content down below navbar */
+  padding-top: 120px;
 }
 
 /* Title: "Search for your favorite movies!" */
 .section-title {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 4vw; /* Scale text dynamically */
+  font-size: 64px; /* Match Movie Page */
   text-align: center;
-  width: 80%; /* Make width flexible */
-  max-width: 900px; /* Match Figma width */
-  margin-top: 20px;
+  width: 898px;
+  height: 90px;
+  margin-top: 50px;
 }
 
 /* Search Bar Container */
 .search-container {
+  width: 935px;
+  height: 75px;
+  background-color: white;
+  border-radius: 40px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 70vw; /* Scales with screen width */
-  max-width: 935px; /* Match Figma width */
-  height: 75px; /* Match Figma */
-  background-color: white;
-  border-radius: 40px; /* Optional: Rounded edges */
-  margin: 20px auto; /* Center it */
+  justify-content: flex-start;
   padding: 10px 20px;
+  margin-bottom: 20px;
 }
 
-/* Search Input Field */
+/* Search Input */
 .search-box {
   font-family: 'Playfair Display', serif;
-  font-size: 2vw; /* Scale dynamically */
+  font-size: 32px;
   width: 100%;
-  max-width: 500px; /* Limit width */
-  height: 100%;
   border: none;
   outline: none;
   color: black;
   background: none;
+  text-indent: 20px;
 }
 
 /* Placeholder Text */
 .search-box::placeholder {
   color: gray;
   font-family: 'Playfair Display', serif;
-  font-size: 2vw;
+  font-size: 32px;
+}
+
+/* Decorative Background Circles */
+.bl-circle {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  background-color: #ffd700;
+  border-radius: 50%;
+  transform: translate(-30%, 30%);
+  transition: transform 0.2s ease-out;
+}
+
+.tl-circle {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  background-color: #0A1A2E;
+  border-radius: 50%;
+  transform: translate(5%, -225%);
+  transition: transform 0.2s ease-out;
+}
+
+.tl-small-circle {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  background-color: #DC143C;
+  border-radius: 50%;
+  transform: translate(-40%, -275%);
+  transition: transform 0.2s ease-out;
 }
