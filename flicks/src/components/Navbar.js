@@ -6,7 +6,7 @@ function Navbar() {
     <nav className="navbar">
       {/* Movie Logo (Top Left) */}
       <div className="logo">
-        <img src="/assets/movie-logo.svg" alt="Movie Logo" className="movie-logo" />
+        <img src="/assets/flick logo 2.svg" alt="Movie Logo" className="movie-logo" />
       </div>
 
       {/* Navigation Buttons */}
