@@ -49,7 +49,7 @@ body {
   margin-right: 15px;
 }
 
-/* Adjust Input Box to Avoid Overlapping Icon */
+/* Adjust Search Box Alignment */
 .search-box {
   font-family: 'Playfair Display', serif;
   font-size: 28px;
@@ -58,8 +58,9 @@ body {
   outline: none;
   color: black;
   background: none;
-  padding-left: 40px; /* Make space for the icon */
+  padding-left: 50px; /* Moved text further left (was 40px) */
 }
+
 
 /* Placeholder Text */
 .search-box::placeholder {
