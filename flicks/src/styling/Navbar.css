@@ -4,10 +4,21 @@
   justify-content: space-between;
   align-items: center;
   background-color: #FFD700; /* Gold */
-  padding: 15px 30px;
+  padding: 0 30px; /* Left & Right Padding */
+  height: 79px; /* Match Figma */
+  width: 100%; /* Full width */
+  position: fixed; /* Fix to top */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensure it stays on top */
 }
 
-/* Logo Text */
+/* Adjust Page Content to Avoid Overlapping */
+.search-page {
+  padding-top: 100px; /* Push content below navbar */
+}
+
+/* Logo */
 .logo {
   font-size: 24px;
   font-weight: bold;
@@ -22,7 +33,9 @@
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   border: none;
-  padding: 12px 12px; /* Based on Figma */
+  width: 91px; /* Match Figma */
+  height: 41px; /* Match Figma */
+  padding: 0; /* No extra padding needed */
   margin: 8px; /* Spacing between buttons */
   cursor: pointer;
   transition: all 0.3s ease-in-out;
