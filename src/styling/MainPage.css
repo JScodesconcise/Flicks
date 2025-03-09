@@ -1,233 +1,52 @@
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  .frame-2 {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background: #1E1E1E;
-  }
-  
-  .nav-container {
-    position: relative;
-    width: 100%;
-    margin: 0;
-    background: #FFD700;
-    height: 67px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    z-index: 20;
-  }
-  
-  .logo-container {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    padding-left: 25px;
-  }
-  
-  .flick-logo-2 {
-    width: 57px;
-    height: 46px;
-    background: url(flick_logo.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  
-  .nav-buttons {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    padding-right: 25px;
-  }
-  
-  .nav-button {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 12px;
-    height: 40px;
-    background: #0A1A2F;
-    border: 1px solid #FFD700;
-    border-radius: 30px;
-    cursor: pointer;
-    margin-left: 20px;
-    color: #F5F5F5;
-  }
-  
-  .nav-button:hover {
-    background: #0F2847;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  }
-  
-  .home-button {
-    width: 93px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
-  
-  .about-button {
-    width: 87px;
-  }
-  
-  .login-button {
-    width: 85px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
-  
-  .content-container {
-    position: relative;
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 0;
-    width: 100%;
-  }
-  
-  .content-wrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    min-height: 809px;
-    background: #1E1E1E;
-  }
-  
-  .logo-title-container {
-    position: absolute;
-    top: 176px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 10;
-  }
-  
-  .logo-title-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 30px;
-  }
-  
-  .flick-logo-1 {
-    width: 83px;
-    height: 64px;
-    background: url(flick_logo.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin-right: 15px;
-  }
-  
-  .flicks-title {
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 72px;
-    line-height: 120%;
-    text-align: center;
-    letter-spacing: -0.03em;
-    color: #FFFFFF;
-    padding: 0 20px;
-  }
-  
-  .main-button {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 12px;
-    width: 211px;
-    height: 49px;
-    background: #0A1A2F;
-    border: 1px solid #FFD700;
-    border-radius: 30px;
-    cursor: pointer;
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 100%;
-    color: #FFFFFF;
-  }
-  
-  .main-button:hover {
-    background: #0F2847;
-    box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
-  }
-  
-  
-  @media (max-width: 1300px) {
-    .content-wrapper {
-      min-height: 700px;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .nav-container {
-      height: auto;
-      padding: 10px 0;
-      flex-direction: column;
-    }
-    
-    .nav-buttons {
-      padding-right: 0;
-      padding-bottom: 10px;
-    }
-    
-    .logo-container {
-      padding-left: 0;
-      padding-top: 10px;
-    }
-    
-    .logo-title-container {
-      position: relative;
-      top: 100px;
-    }
-    
-    .flicks-title {
-      font-size: 52px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .nav-buttons {
-      flex-direction: column;
-      gap: 10px;
-    }
-    
-    .nav-button {
-      margin-left: 0;
-      margin-top: 5px;
-    }
-    
-    .logo-title-row {
-      flex-direction: column;
-    }
-    
-    .flick-logo-1 {
-      margin-right: 0;
-      margin-bottom: 10px;
-    }
-    
-    .flicks-title {
-      font-size: 36px;
-    }
-    
-    .main-button {
-      width: 180px;
-    }
-  }
+.content-container {
+	min-height: 90vh;
+	display: flex;
+}
+.logo-title-container {
+	margin: auto auto;
+	padding: 2em;
+}
+.logo-title-row > img {
+	width: 83px;
+}
+.logo-title-row {
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 4.625em;
+}
+.main-button {
+	padding: 1em 4.6875em;
+	font-size: 1rem;
+	border-radius: 2em;
+}
+.main-button-container {
+	display: flex;
+	justify-content: center;
+}
+.flicks-title {
+	margin-left: 0.25em;
+}
+/*
+    styling / typography
+*/
+.flicks-title {
+	font-family: "Inter", sans-serif;
+	font-weight: 700;
+	font-size: 4.5rem;
+	color: #f5f5f5;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: #ffd700;
+}
+.content-container {
+	background-color: #1c1c1c;
+}
+.main-button {
+	border: 1px solid #ffd700;
+	background: #0a1a2f;
+	color: #f5f5f5;
+}
+.main-button:hover {
+	background: #ffd700;
+	color: #1c1c1c;
+	cursor: pointer;
+}
