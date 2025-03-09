@@ -12,7 +12,8 @@ function App() {
             length="2h 28m"
             genres={["Action", "Sci-Fi", "Thriller"]}
             overview="A thief who enters the dreams of others to steal secrets gets a final mission."
-            rating={5}  // Out of 5 stars
+            rating={5} 
+            image="https://i.ebayimg.com/00/s/MTYwMFgxMDk3/z/LlUAAOSwm8VUwoRL/$_57.JPG?set_id=880000500F"
             cast={["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Ellen Page"]}
             flicksRating={4.3}
         />

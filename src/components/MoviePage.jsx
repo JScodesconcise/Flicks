@@ -1,6 +1,7 @@
 import "./MoviePage.css";
+import StarRate from "./StarRate";
 
-const MoviePage = ({ title, year, director, advisory, length, genres, overview, rating, cast, flicksRating }) => {
+const MoviePage = ({ title, year, director, advisory, length, genres, overview, image, rating, cast, flicksRating }) => {
     return (
         <div className="movie-page">
             <header className="header">
@@ -30,7 +31,7 @@ const MoviePage = ({ title, year, director, advisory, length, genres, overview, 
 
                     <section className="rating">
                         <h3>Rate</h3>
-                        <p className="stars">{"⭐".repeat(rating)}</p>
+                        <StarRate />
                     </section>
 
                     <section className="cast">
@@ -45,7 +46,7 @@ const MoviePage = ({ title, year, director, advisory, length, genres, overview, 
                 </section>
 
                 <aside className="sidebar">
-                    <img className="poster" src="https://i.ebayimg.com/00/s/MTYwMFgxMDk3/z/LlUAAOSwm8VUwoRL/$_57.JPG?set_id=880000500F" alt="Poster"></img>
+                    <img className="poster" src={image} alt="Poster"></img>
                     <p><strong>Flicks Rating:</strong> {flicksRating}</p>
                     <button className="watchlist-button">Add to watchlist</button>
                 </aside>
