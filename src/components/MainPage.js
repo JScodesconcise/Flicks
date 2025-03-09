@@ -1,33 +1,8 @@
 import React, { useState } from "react";
 import "../styling/MainPage.css";
-import "../styling/MainPageNavbar.css";
+import MainPageNavBar from "./MainPageNavbar";
 import logo from "../styling/flick_logo.png";
 
-function NavBar({ handleLoggedInCheck, handleSignup, handleLogin }) {
-	return (
-		<>
-			<nav className="nav-container">
-				<div className="logo-container">
-					<img src={logo}></img>
-				</div>
-				<div className="nav-buttons">
-					<button
-						className="nav-button home-button"
-						onClick={() => handleLoggedInCheck("profile")}
-					>
-						Profile
-					</button>
-					<button className="nav-button about-button" onClick={handleSignup}>
-						Sign Up
-					</button>
-					<button className="nav-button login-button" onClick={handleLogin}>
-						Login
-					</button>
-				</div>
-			</nav>
-		</>
-	);
-}
 const FlicksLandingPage = () => {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -62,7 +37,7 @@ const FlicksLandingPage = () => {
 	};
 	return (
 		<div className="frame-2">
-			<NavBar
+			<MainPageNavBar
 				handleLoggedInCheck={handleLoggedInCheck}
 				handleLogin={handleLogin}
 				handleSignup={handleSignup}
