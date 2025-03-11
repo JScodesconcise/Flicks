@@ -15,13 +15,16 @@
   .header {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #ccc;
     align-items: flex-end;
     padding-bottom: 2px;
-    margin-bottom: 0; 
+    border-bottom: 1px solid #ccc;
     font-family: 'Bebas Neue';
   }
   
+  .title, .year {
+    margin-bottom: 0;
+  }
+
   .title {
     font-size: 84px;
     font-weight: bold;
@@ -40,8 +43,8 @@
     font-family: 'Roboto', sans-serif;
   }
 
-  .stars {
-    font-size: 1.5rem;
+  .info p {
+    margin-bottom: 0;
   }
 
   .content-wrapper {
