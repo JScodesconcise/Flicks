@@ -4,17 +4,32 @@ import SignupForm from "./components/SignupForm/SignupForm.js";
 import ForgotPasswordForm from "./components/ForgotPasswordForm/ForgotPasswordForm.js";
 import "./App.css";
 import FlicksLandingPage from "./components/MainPage.js";
-
+import MoviePage from "./components/MoviePage.jsx";
+import ProfilePage from "./components/ProfilePage.jsx"
+import MovieCard from "./components/MovieCard.jsx";
+import { AuthProvider } from './components/AuthContext.jsx';
+import SearchPage from "./components/SearchPage.jsx";
 function App() {
 	return (
+		
 		<Router>
+			<AuthProvider>
 			<Routes>
 				<Route path="/" element={<FlicksLandingPage />} />
 				<Route path="/SignUp" element={<SignupForm />} />
 				<Route path="/Login" element={<LoginForm />} />
 				<Route path="/ForgotPassword" element={<ForgotPasswordForm />} />
+				<Route path="/Profile" element={<ProfilePage/>} />
+				<Route path="/Search" element= {<SearchPage/>} />
 			</Routes>
+			</AuthProvider>
+
 		</Router>
+		
+		//<MovieCard/>
+		//<MoviePage/>
+		//<ProfilePage/>
+		 
 	);
 }
 
