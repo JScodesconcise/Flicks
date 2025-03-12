@@ -3,9 +3,11 @@ import { useNavigate } from "react-router-dom";
 import "../../styling/Loginform.css";
 import { FaUser, FaEye, FaEyeSlash } from "react-icons/fa";
 import logo from "../../styling/flick_logo.png";
+import { useAuth } from "../AuthContext";
 
 const LoginForm = () => {
 	const navigate = useNavigate();
+	const { setIsLoggedIn } = useAuth();
 	const [passwordVisible, setPasswordVisible] = useState(false);
 
 	const togglePasswordVisibility = () => {
@@ -14,7 +16,8 @@ const LoginForm = () => {
 
 	const handleLogin = (e) => {
 		e.preventDefault();
-		navigate("/dashboard");
+		setIsLoggedIn(true);
+		navigate("/");
 	};
 
 	return (

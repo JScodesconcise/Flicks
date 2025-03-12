@@ -1,12 +1,54 @@
 import "../styling/MainPageNavbar.css";
 import logo from "../styling/flick_logo.png";
+import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { useAuth } from './AuthContext';
 
-function MainPageNavBar({ handleLoggedInCheck, handleSignup, handleLogin }) {
+function MainPageNavBar() {
+	const { setIsLoggedIn } = useAuth();
+	const {isLoggedIn} = useAuth();
+	const navigate = useNavigate();
+	
+	const handleLoggedInCheck = (scenario) => {
+		if (isLoggedIn) {
+			switch (scenario) {
+				case "search":
+					navigate("/Search")
+					break;
+				case "profile":
+					navigate("/Profile");
+					break;
+				default:
+					console.log("error");
+			}
+		} else {
+			navigate("/SignUp");
+		}
+	};
+
+	const handleLogin = () => {
+		if (isLoggedIn){
+			alert("You are now logged in!");
+		}
+		else{
+			navigate("/Login")
+		}
+		
+		
+	};
+	
+	const handleSignup = () => {
+		if (isLoggedIn) {
+			alert("already logged in");
+		} else {
+			navigate("/SignUp")
+		}
+	};
 	return (
 		<>
 			<nav className="nav-container">
 				<div className="logo-container">
-					<img src={logo} alt="flicks logo"></img>
+					<img src={logo} alt="flicks logo" onClick={() => navigate("/")}></img>
 				</div>
 				<div className="nav-buttons">
 					<button
