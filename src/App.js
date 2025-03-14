@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import LoginForm from "./components/LoginForm/LoginForm.js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SignupForm from "./components/SignupForm/SignupForm.js";

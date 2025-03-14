@@ -23,6 +23,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+<<<<<<< HEAD
 /src/backend/__pycache__
 
 /.venv
+=======
+.env
+>>>>>>> origin/MovieStartModal
