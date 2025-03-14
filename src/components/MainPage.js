@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styling/MainPage.css";
 import MainPageNavBar from "./MainPageNavbar";
-import logo from "../styling/flick_logo.png";
+import logo from "../pictures/flick_logo.png";
 import { useNavigate } from "react-router-dom";
 
 const FlicksLandingPage = () => {
@@ -10,15 +10,7 @@ const FlicksLandingPage = () => {
 
 	const handleLoggedInCheck = (scenario) => {
 		if (isLoggedIn) {
-			switch (scenario) {
-				case "search":
-					console.log("go to search page");
-					break;
-				case "profile":
-					break;
-				default:
-					console.log("error");
-			}
+			navigate("/Search");
 		} else {
 			navigate("/SignUp");
 		}

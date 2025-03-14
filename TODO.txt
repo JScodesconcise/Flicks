@@ -1,1 +1,1 @@
-Usecallback/usememo, lazy load images, write media queries
+lazy load images, write media queries
