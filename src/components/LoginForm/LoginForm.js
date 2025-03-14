@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../styling/Loginform.css";
 import { FaUser, FaEye, FaEyeSlash } from "react-icons/fa";
-import logo from "../../styling/flick_logo.png";
+import logo from "../../pictures/flick_logo.png";
 
 const LoginForm = () => {
 	const navigate = useNavigate();
