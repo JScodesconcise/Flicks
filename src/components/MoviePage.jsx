@@ -1,41 +1,49 @@
-import "./MoviePage.css";
+import "../styling/MoviePage.css";
 import StarRate from "./StarRate";
 import { useEffect, useState } from "react";
 
 const API_KEY = process.env.REACT_APP_TMDB_API_KEY;
 
-const MoviePage = ({ movieName, year }) => {
+// must be called with either movie name AND year, OR using the movie's id
+const MoviePage = ({ movieName="default", year="default", id }) => {
     const [movie, setMovie] = useState(null);
     const [error, setError] = useState(null);
 
     useEffect(() => {
         console.log("useEffect triggered with:", movieName, year);
         console.log('Backdrop Path:', movie?.backdropPath);
-        if (!movieName) return;
+        if (!movieName && !id) return;
     
         const fetchMovie = async () => {
             try {
-                console.log("Fetching movie with:", movieName, year);
-                const searchRes = await fetch(
-                    `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(movieName)}&year=${year}`
-                );
-                if (!searchRes.ok) {
-                    throw new Error("Failed to fetch search results");
-                }
+                let movieId;
 
-                const searchData = await searchRes.json();
-                console.log("searchData:", searchData);
+                if (movieName !== "default" && year !== "default") {
+                    console.log("Fetching movie with:", movieName, year);
+                    const searchRes = await fetch(
+                        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(movieName)}&year=${year}`
+                    );
+                    if (!searchRes.ok) {
+                        throw new Error("Failed to fetch search results");
+                    }
 
-                if (searchData.results.length === 0) {
-                    setError("Movie not found");
-                    return;
+                    const searchData = await searchRes.json();
+                    console.log("searchData:", searchData);
+
+                    if (searchData.results.length === 0) {
+                        setError("Movie not found");
+                        return;
+                    }
+        
+                    movieId = searchData.results[0].id;
+                } else {
+                    movieId = id;
                 }
-    
-                const movieId = searchData.results[0].id;
 
                 const detailsRes = await fetch(
                     `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&append_to_response=release_dates,credits,videos`
                 );
+                if (!detailsRes.ok) throw new Error("Failed to fetch movie details, invalid movie ID");
 
                 const details = await detailsRes.json();
                 console.log('Fetched movie details:', details);
@@ -60,6 +68,7 @@ const MoviePage = ({ movieName, year }) => {
                     genres: genres,
                     cast: cast,
                     trailerUrl: trailerUrl,
+                    bannerURL: details.backdrop_path || "",
                 });
           
                 setError(null);
@@ -72,7 +81,7 @@ const MoviePage = ({ movieName, year }) => {
         };
     
         fetchMovie();
-    }, [movieName, year]);
+    }, [movieName, year, id]);
     
     if (error) return <p>{error}</p>;
     if (!movie) return <p>Loading...</p>;
@@ -80,14 +89,15 @@ const MoviePage = ({ movieName, year }) => {
 
     return (
         <div className="movie-page">
+            <div className="banner-container">
+                <img className="banner-image" src={`https://image.tmdb.org/t/p/original${movie.bannerURL}`}></img>
+                <div className="banner-overlay"></div>
+            </div>
+
             <header className="header">
                 <h1 className="title">{movie.title}</h1>
                 <h2 className="year">{movie.releaseYear}</h2>
             </header>
-
-            <div className="bl-circle"></div>
-            <div className="tl-small-circle"></div>
-            <div className="tl-circle"></div>
         
             <div className="content-wrapper">
                 <section className="main-content" id="sub">
@@ -132,7 +142,7 @@ const MoviePage = ({ movieName, year }) => {
                         )}
                     </section>
                 </section>
-
+            
                 <div className="sidebar">
                     <img className="poster" src={`https://image.tmdb.org/t/p/w500${movie.posterPath}`} alt="Poster"></img>
                     <button className="watchlist-button">Add to watchlist</button>
