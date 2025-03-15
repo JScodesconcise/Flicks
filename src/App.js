@@ -5,6 +5,8 @@ import ForgotPasswordForm from "./components/ForgotPasswordForm/ForgotPasswordFo
 import "./App.css";
 import FlicksLandingPage from "./components/MainPage.js";
 import SearchPage from "./components/SearchPage";
+import MainPageNavBar from "./components/MainPageNavbar.jsx";
+import MoviePage from "./components/MoviePage.jsx";
 
 function App() {
 	return (
@@ -15,6 +17,10 @@ function App() {
 				<Route path="/Login" element={<LoginForm />} />
 				<Route path="/ForgotPassword" element={<ForgotPasswordForm />} />
 				<Route path="/Search" element={<SearchPage />} />
+				<Route
+					path="/Search/:id"
+					element={<MoviePage movieName="default" year="default" />}
+				/>
 			</Routes>
 		</Router>
 	);

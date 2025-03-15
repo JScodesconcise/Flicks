@@ -3,6 +3,7 @@ import AsyncSelect from "react-select/async";
 import genres from "../Data/genres.json";
 import moods from "../Data/moods.json";
 import "../styling/MoviePreferences.css";
+import { useMemo } from "react";
 
 const API_KEY = process.env.REACT_APP_TMDB_API_KEY;
 
@@ -43,7 +44,7 @@ function debounce(fn, delay) {
 		return new Promise((resolve, reject) => {
 			timeoutId = setTimeout(async () => {
 				try {
-					const result = await fn.apply(this, args);
+					const result = await fn.apply(args);
 					resolve(result);
 				} catch (error) {
 					reject(error);
