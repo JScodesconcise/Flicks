@@ -23,28 +23,42 @@ const LoginForm = () => {
 
 	const handleLogin = async (e) => {
 		e.preventDefault();
-		setMessage("");
 		setLoading(true);
-
+		toast.dismiss(); // Clear any previous toasts
+	
 		try {
-			//change url based on deployment
-			const response = await axios.post("http://127.0.0.1:8030/auth/login", {
+			console.log("🔍 Attempting login with:", { username, password });
+	
+			const response = await axios.post("http://127.0.0.1:8000/auth/login", {
 				username,
 				password,
 			});
-			if (response.status === 200) {
-				const {token} = response.data;
-				login(token)
-				navigate("/"); //Redirect user after login
+	
+			console.log("✅ API Response:", response.data); // Debugging API response
+	
+			// Extract token correctly
+			const token = response.data.token;
+			if (token) {
+				login(token);
+				toast.success("Login successful!");
+				navigate("/");
+			} else {
+				toast.error("Login successful, but no token received.");
 			}
 		} catch (error) {
-			toast.error(error.response?.data?.detail || "Invalid login credentials.");
-			console.error("Login Error:", error);
+			console.error("❌ Login Error Response:", error.response);
+			console.error("⚠️ Full Error:", error);
+	
+			if (error.response) {
+				toast.error(error.response.data.detail || "Invalid login credentials.");
+			} else {
+				toast.error("Server error. Check backend logs.");
+			}
 		} finally {
 			setLoading(false);
 		}
 	};
-
+	
 	return (
 		<div className="logincontainer login-container">
 			<div className="loginwrapper login-wrapper">
