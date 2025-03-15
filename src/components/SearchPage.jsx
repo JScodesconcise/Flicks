@@ -9,6 +9,7 @@ import "../styling/SearchPage.css";
 import logocard from "../pictures/flickslogocard.svg";
 import searchpicture from "../pictures/search.svg";
 import Navbar from "./Navbar.jsx";
+import { Link } from "react-router-dom";
 
 function debounce(func, delay) {
 	let timer;
@@ -40,7 +41,9 @@ function SearchPage() {
 	);
 
 	const handleBlur = useCallback(() => {
-		setFocused(false);
+		setTimeout(() => {
+			setFocused(false);
+		}, 200);
 	}, []);
 	const handleFocus = useCallback(() => {
 		setFocused(true);
@@ -68,6 +71,7 @@ function SearchPage() {
 								movie.poster_path,
 								movie.release_date,
 								movie.vote_average,
+								movie.id,
 							])
 					)
 				)
@@ -120,7 +124,11 @@ function SearchPage() {
 						<div className="search-results">
 							{searchResults.map((input, i) => {
 								return (
-									<div className="search-result-wrapper" key={`wrapper-${i}`}>
+									<Link
+										to={`/Search/${input[4]}`}
+										className="search-result-wrapper"
+										key={`wrapper-${i}`}
+									>
 										<img
 											className={`search-result-image ${i}`}
 											src={`${baseURLSmaller}${input[1]}`}
@@ -147,7 +155,7 @@ function SearchPage() {
 												.toString()
 												.slice(0, 3)}/10`}</p>
 										</div>
-									</div>
+									</Link>
 								);
 							})}
 						</div>

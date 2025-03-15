@@ -12,7 +12,7 @@
 	margin-right: 2.06em;
 }
 .logo-container > img {
-	height: 50px;
+	height: 57px;
 	margin-left: 0.5em;
 	padding: 0.25em;
 }
@@ -51,7 +51,8 @@
 		flex-direction: column;
 		align-items: center;
 	}
-	.nav-button {
+	.nav-button,
+	.nav-button-all {
 		margin: 0.75em 0;
 	}
 	.logo-container {

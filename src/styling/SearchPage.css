@@ -126,6 +126,9 @@
 	cursor: pointer;
 	transform: scale(1.2);
 }
+.search-result-wrapper {
+	text-decoration: none;
+}
 @media (max-width: 768px) {
 	.search-wrapper {
 		width: 80%;
