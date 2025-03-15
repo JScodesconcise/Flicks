@@ -1,50 +1,120 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "../../styling/SignupForm.css";
 import logo from "../../styling/flick_logo.png";
 
-const Signupform = () => {
-	const navigate = useNavigate(); // Initialize navigate function
+const SignupForm = () => {
+    const navigate = useNavigate();
 
-	return (
-		<div className="logincontainer signup-container">
-			<div className="loginwrapper signup-wrapper">
-				<form>
-					<img src={logo} alt="App Logo" width="100" />
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [email, setEmail] = useState("");
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [message, setMessage] = useState("");
+    const [loading, setLoading] = useState(false);
 
-					<h1 className="loginformtitle signup">Sign Up</h1>
-					<div className="input-box">
-						<input type="text" placeholder="First Name" required />
-					</div>
-					<div className="input-box">
-						<input type="text" placeholder="Last Name" required />
-					</div>
-					<div className="input-box">
-						<input type="text" placeholder="Email" required />
-					</div>
-					<div className="input-box">
-						<input type="text" placeholder="Username" required />
-					</div>
-					<div className="input-box">
-						<input type="password" placeholder="Password" required />
-					</div>
-					<button type="submit">Sign Up</button>
+    const handleSignup = async (e) => {
+        e.preventDefault();
+        setMessage("");
+        setLoading(true);
 
-					<div className="loginlink login-link">
-						<p>
-							Already have an account?
-							<span
-								className="logintext login-text"
-								onClick={() => navigate("/login")}
-							>
-								Login
-							</span>
-						</p>
-					</div>
-				</form>
-			</div>
-		</div>
-	);
+        try {
+            await axios.post("http://127.0.0.1:8030/users/signup", {
+                firstName,
+                lastName,
+                email,
+                username,
+                password,
+            });
+
+            setMessage("Account created successfully! Redirecting to login...");
+            setTimeout(() => navigate("/login"), 3000);
+        } catch (error) {
+            setMessage(error.response?.data?.detail || "Error signing up. Try again.");
+            console.error("Signup Error:", error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    return (
+        <div className="login-container">
+            <div className="loginwrapper signup-wrapper">
+                <form onSubmit={handleSignup}>
+                    <img src={logo} alt="App Logo" width="100" />
+
+                    <h1 className="loginformtitle signup">Sign Up</h1>
+
+                    {message && <p className="message-top">{message}</p>}
+
+                    <div className="input-box">
+                        <input
+                            type="text"
+                            placeholder="First Name"
+                            value={firstName}
+                            onChange={(e) => setFirstName(e.target.value)}
+                            required
+                        />
+                    </div>
+
+                    <div className="input-box">
+                        <input
+                            type="text"
+                            placeholder="Last Name"
+                            value={lastName}
+                            onChange={(e) => setLastName(e.target.value)}
+                            required
+                        />
+                    </div>
+
+                    <div className="input-box">
+                        <input
+                            type="email"
+                            placeholder="Email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
+                    </div>
+
+                    <div className="input-box">
+                        <input
+                            type="text"
+                            placeholder="Username"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                            required
+                        />
+                    </div>
+
+                    <div className="input-box">
+                        <input
+                            type="password"
+                            placeholder="Password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                        />
+                    </div>
+
+                    <button type="submit" disabled={loading}>
+                        {loading ? "Signing Up..." : "Sign Up"}
+                    </button>
+
+                    <div className="login-link">
+                        <p>
+                            Already have an account?
+                            <span className="login-text" onClick={() => navigate("/login")}>
+                                Login
+                            </span>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    );
 };
 
-export default Signupform;
+export default SignupForm;
