@@ -4,15 +4,18 @@ import axios from "axios";
 import "../../styling/Loginform.css";
 import { FaUser, FaEye, FaEyeSlash } from "react-icons/fa";
 import logo from "../../styling/flick_logo.png";
+import { useAuth } from '../AuthContext';
+import toast from 'react-hot-toast';
 
 const LoginForm = () => {
 	const navigate = useNavigate();
-
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
 	const [passwordVisible, setPasswordVisible] = useState(false);
 	const [message, setMessage] = useState("");
 	const [loading, setLoading] = useState(false);
+	const { login} = useAuth();
+
 
 	const togglePasswordVisibility = () => {
 		setPasswordVisible(!passwordVisible);
@@ -29,12 +32,13 @@ const LoginForm = () => {
 				username,
 				password,
 			});
-
 			if (response.status === 200) {
+				const {token} = response.data;
+				login(token)
 				navigate("/"); //Redirect user after login
 			}
 		} catch (error) {
-			setMessage(error.response?.data?.detail || "Invalid login credentials.");
+			toast.error(error.response?.data?.detail || "Invalid login credentials.");
 			console.error("Login Error:", error);
 		} finally {
 			setLoading(false);

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../../styling/SignupForm.css";
 import logo from "../../styling/flick_logo.png";
+import toast from 'react-hot-toast';
 
 const SignupForm = () => {
     const navigate = useNavigate();
@@ -29,10 +30,10 @@ const SignupForm = () => {
                 password,
             });
 
-            setMessage("Account created successfully! Redirecting to login...");
+            toast.success("Account created successfully! Redirecting to login...");
             setTimeout(() => navigate("/login"), 3000);
         } catch (error) {
-            setMessage(error.response?.data?.detail || "Error signing up. Try again.");
+            toast.error(error.response?.data?.detail || "Error signing up. Try again.");
             console.error("Signup Error:", error);
         } finally {
             setLoading(false);

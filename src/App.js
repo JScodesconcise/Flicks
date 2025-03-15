@@ -10,11 +10,12 @@ import ProfilePage from "./components/ProfilePage.jsx"
 import MovieCard from "./components/MovieCard.jsx";
 import { AuthProvider } from './components/AuthContext.jsx';
 import SearchPage from "./components/SearchPage.jsx";
+import { Toaster } from 'react-hot-toast';
 function App() {
 	return (
 		
 		<Router>
-			<AuthProvider>
+			<AuthProvider><Toaster position="top-center" reverseOrder={false}/>
 			<Routes>
 				<Route path="/" element={<FlicksLandingPage />} />
 				<Route path="/SignUp" element={<SignupForm />} />

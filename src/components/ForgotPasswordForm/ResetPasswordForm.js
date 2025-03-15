@@ -4,6 +4,7 @@ import axios from "axios";
 import "../../styling/ResetPasswordForm.css";
 import logo from "../../styling/flick_logo.png";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import toast from 'react-hot-toast';
 
 const ResetPasswordForm = () => {
     const { token } = useParams();
@@ -38,11 +39,11 @@ const ResetPasswordForm = () => {
             );
 
             if (response.status === 200) {
-                setMessage("Password reset successful! Redirecting to login...");
+                toast.success("Password reset successful! Redirecting to login...");
                 setTimeout(() => navigate("/login"), 3000);
             }
         } catch (error) {
-            setMessage(error.response?.data?.detail || "Error resetting password.");
+            toast.error(error.response?.data?.detail || "Error resetting password.");
             console.error("Reset Password Error:", error);
         } finally {
             setLoading(false);
