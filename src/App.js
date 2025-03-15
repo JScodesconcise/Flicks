@@ -2,6 +2,7 @@ import LoginForm from "./components/LoginForm/LoginForm.js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SignupForm from "./components/SignupForm/SignupForm.js";
 import ForgotPasswordForm from "./components/ForgotPasswordForm/ForgotPasswordForm.js";
+import ResetPasswordForm from "./components/ForgotPasswordForm/ResetPasswordForm.js";
 import "./App.css";
 import FlicksLandingPage from "./components/MainPage.js";
 import MoviePage from "./components/MoviePage.jsx";
@@ -19,6 +20,7 @@ function App() {
 				<Route path="/SignUp" element={<SignupForm />} />
 				<Route path="/Login" element={<LoginForm />} />
 				<Route path="/ForgotPassword" element={<ForgotPasswordForm />} />
+				<Route path="/ResetPassword/:token" element={<ResetPasswordForm />} />
 				<Route path="/Profile" element={<ProfilePage/>} />
 				<Route path="/Search" element= {<SearchPage/>} />
 			</Routes>
