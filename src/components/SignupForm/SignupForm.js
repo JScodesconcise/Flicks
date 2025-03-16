@@ -5,6 +5,7 @@ import "../../styling/SignupForm.css";
 import logo from "../../styling/flick_logo.png";
 import toast from 'react-hot-toast';
 
+
 const SignupForm = () => {
     const navigate = useNavigate();
 

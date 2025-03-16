@@ -5,6 +5,7 @@ import { MdEmail } from "react-icons/md";
 import logo from "../../styling/flick_logo.png";
 import toast from 'react-hot-toast';
 
+
 const ForgotPasswordForm = () => {
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
