@@ -7,6 +7,7 @@ import logo from "../../styling/flick_logo.png";
 import { useAuth } from '../AuthContext';
 import toast from 'react-hot-toast';
 
+
 const LoginForm = () => {
 	const navigate = useNavigate();
 	const [username, setUsername] = useState("");

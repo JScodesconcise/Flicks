@@ -5,6 +5,7 @@ import React from "react";
 import { useAuth } from './AuthContext';
 import toast from 'react-hot-toast';
 
+
 function MainPageNavBar() {
 	const {isLoggedIn} = useAuth();
 	const navigate = useNavigate();

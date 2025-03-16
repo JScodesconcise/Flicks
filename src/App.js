@@ -21,9 +21,14 @@ function App() {
 				<Route path="/SignUp" element={<SignupForm />} />
 				<Route path="/Login" element={<LoginForm />} />
 				<Route path="/ForgotPassword" element={<ForgotPasswordForm />} />
+
 				<Route path="/ResetPassword/:token" element={<ResetPasswordForm />} />
 				<Route path="/Profile" element={<ProfilePage/>} />
-				<Route path="/Search" element= {<SearchPage/>} />
+				<Route path="/Search" element={<SearchPage />} />
+				<Route
+					path="/Search/:id"
+					element={<MoviePage movieName="default" year="default" />}
+				/>
 			</Routes>
 			</AuthProvider>
 
