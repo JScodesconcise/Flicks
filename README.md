@@ -6,7 +6,9 @@
 **Live site:** [https://flicks-frontend-production.up.railway.app/](https://flicks-frontend-production.up.railway.app/)
 
 **Demo Video**
-<video src = "4314_Presentation.mp4" controls width="600"></video>
+<video src="4314_Presentation.mp4" controls width="600">
+  Your browser does not support the video tag.
+</video>
 
 ---
 
