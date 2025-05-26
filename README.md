@@ -33,7 +33,7 @@
 | Frontend    | React           |
 | Backend     | FastAPI         |
 | Database    | MongoDB         |
-| AI Logic    | Custom algorithm |
+| AI Logic    | SVD + cosine sim|
 | Deployment  | Railway         |
 
 ---
