@@ -5,7 +5,7 @@
 
 **Live site:** [https://flicks-frontend-production.up.railway.app/](https://flicks-frontend-production.up.railway.app/)
 
-[▶️ Watch the demo video](4314_Presentation.mp4)
+[![Demo preview](preview.gif)](4314_Presentation.mp4)
 
 ---
 
