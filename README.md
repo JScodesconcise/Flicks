@@ -3,7 +3,8 @@
 
 **Flicks** is a personalized movie recommendation website that helps users discover films tailored to their unique tastes. It combines user preferences and AI to generate smart, adaptive recommendations that improve over time.
 
-**Live site:** [https://flicks-frontend-production.up.railway.app/](https://flicks-frontend-production.up.railway.app/)
+**Live site:** [https://flicks-frontend-production.up.railway.app/](https://flicks-frontend-production.up.railway.app/) (not available as of now)
+
 
 ---
 
